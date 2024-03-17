@@ -14,7 +14,7 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('admin_assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gradient-primary">
+<body class="bg-success">
   <div class="container">
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -23,7 +23,8 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block bg-image" style="background-image: url('{{ asset('images/inasal.jpeg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
@@ -53,7 +54,7 @@
                           Me</label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-user">Login</button>
+                    <button type="submit" class="btn btn-success btn-block btn-user">Login</button>
                   </form>
                   <hr>
                   <div class="text-center">

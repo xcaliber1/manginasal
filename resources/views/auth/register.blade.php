@@ -14,13 +14,15 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('admin_assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gradient-primary">
+<body class="bg-gradient-success">
   <div class="container">
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+  
+          <div class="col-lg-5 d-none d-lg-block bg-image" style="background-image: url('{{ asset('images/inasal.jpeg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
@@ -54,7 +56,7 @@
                     @enderror
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
+                <button type="submit" class="btn btn-success btn-user btn-block">Register Account</button>
               </form>
               <hr>
               <div class="text-center">
