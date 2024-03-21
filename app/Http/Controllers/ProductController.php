@@ -30,7 +30,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+        Product::create($request->all());   
  
         return redirect()->route('products')->with('success', 'Product added successfully');
     }
@@ -64,7 +64,7 @@ class ProductController extends Controller
   
         $product->update($request->all());
   
-        return redirect()->route('products')->with('success', 'product updated successfully');
+        return redirect()->route('products')->with('success', 'Product updated successfully');
     }
   
     /**
@@ -76,7 +76,19 @@ class ProductController extends Controller
   
         $product->delete();
   
-        return redirect()->route('products')->with('success', 'product deleted successfully');
+        return redirect()->route('products')->with('success', 'Product deleted successfully');
+    }
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('q');
+
+        $product = Product::where('title', 'like', '%' . $searchTerm . '%')
+            ->orWhere('product_code', 'like', '%' . $searchTerm . '%')
+            ->orderBy('created_at', 'DESC')
+            ->get();
+
+        return view('products.index', compact('product', 'searchTerm'));
     }
 }
 
